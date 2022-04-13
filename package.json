@@ -1,0 +1,23 @@
+{
+  "name": "surfsapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "serve src",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FrancisBrodie/SurfsApp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FrancisBrodie/SurfsApp/issues"
+  },
+  "homepage": "https://github.com/FrancisBrodie/SurfsApp#readme",
+  "devDependencies": {
+    "serve": "^13.0.2"
+  }
+}
