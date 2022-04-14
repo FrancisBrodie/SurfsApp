@@ -12,7 +12,7 @@ body {
 }
 
 .landing {
-    background-image: url('https://images.pexels.com/photos/1556797/pexels-photo-1556797.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+    background-image: url('./img/Landing2.jpg');
     height: 100vh;
     background-size: cover;
     background-position: center;
@@ -46,4 +46,82 @@ body {
 .landing .button:hover {
     background: #926239;
     color: #fff;
+}
+
+.listing {
+    background-image: url('./img/Landing2.jpg');
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px
+}
+
+.listing h1 {
+    font-size: 50px;
+    line-height: 1.2;
+}
+
+.listing .button {
+    font-size: 20px;
+    text-decoration: none;
+    color: #926239;
+    border: #926239;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.listing .button:hover {
+    background: #926239;
+    color: #fff;
+}
+
+.card {
+    border: 1px solid #926239;
+    border-radius: .5rem;
+    padding: .5rem;
+    background: transparent;
+    max-width: 300px;
+    margin: 0 auto;
+    display: none;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: .5rem;
+    gap: .25em;
+}
+
+.form-group :last-child {
+    margin: 0;
+}
+
+.form-group>label {
+    font-weight: bold;
+    font-size: .8em;
+    color: #926239;
+}
+
+.form-group>input {
+    border: 1px solid #926239;
+    border-radius: .25em;
+    background: transparent;
+    font-size: 1rem;
+    padding: .25rem;
+}
+
+.step-title {
+    margin: 0;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.card.active {
+    display: block;
 }

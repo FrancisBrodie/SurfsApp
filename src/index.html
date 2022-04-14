@@ -1,17 +1,60 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>SurfsApp</title>
     <link rel="stylesheet" href="./index.css">
+    <script src=" script.js" defer></script>
 </head>
 <body>
 <header class="landing">
     <h1>Welcome to SurfsApp!</h1>
     <p>Let's sign up :D </p>
-    <a href="#" class="button">GOOGLE</a>
+    <!-- <a href="./lists.html" class="button">GOOGLE</a> -->
+
+<form data-multi-step>
+    <div class="card" data-step=>
+        <h3 class="step-title">This is step 1 of 3</h3>
+        <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email">
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password">
+    </div>
+    <button type="button" data-next>Next</button>
+    </div>
+    <div class="card" data-step=>
+        <h3 class="step-title">This is step 2 of 3</h3>
+        <div class="form-group">
+        <label for="language">Pick your Language</label>
+        <input type="text" name="language" id="language">
+    </div>
+    <button type="button" data-previous>Previous</button>
+    <button type="button" data-next>Next</button>
+    </div>
+    <div class="card" data-step=>
+        <h3 class="step-title">This is step 3 of 3</h3>
+        <h3 class="step-title">Where am I?</h3>
+        <div class="form-group">
+        <label for="continent">Select Continent</label>
+        <input type="text" name="continent" id="continent">
+    </div>
+    <div class="form-group">
+        <label for="country">Select Country</label>
+        <input type="text" name="country" id="country">
+    </div>
+    <div class="form-group">
+        <label for="city">Select City</label>
+        <input type="text" name="city" id="city">
+    </div>
+    <button type="button" data-previous="">Previous</button>
+        <button type="submit">Submit</button>
+    </div>
+</form>
 </header>
+</body>
 </html>
