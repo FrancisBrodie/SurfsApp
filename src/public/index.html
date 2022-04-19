@@ -15,7 +15,7 @@
     <p>Let's sign up :D </p>
     <!-- <a href="./lists.html" class="button">GOOGLE</a> -->
   
-<form data-multi-step method="post" action="/onboarding">
+<form data-multi-step method="post" action="/onboarding" class="multi-step-form">
     <div class="card" data-step=>
         <h3 class="step-title">Step 1 of 3</h3>
         <div class="form-group">
@@ -24,7 +24,7 @@
     </div>
     <div class="form-group">
         <label for="password">Password</label>
-        <input type="password" name="password" id="password">
+        <input type="password" required name="password" id="password">
     </div>
     <button type="button" class="button"data-next>Next</button>
     </div>
@@ -51,8 +51,8 @@
         <label for="city">Select City</label>
         <input type="text" name="city" id="city">
     </div>
-    <button type="button" class="subButton" data-previous="">Previous</button>
-        <button type="submit">Submit</button>
+    <button type="button" class="button" data-previous="">Previous</button>
+        <button type="submit" class="button">Submit</button>
     </div>
 </form>
 </div>
