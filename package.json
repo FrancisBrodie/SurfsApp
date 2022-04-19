@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "serve src",
+    "start": "node src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,7 +17,8 @@
     "url": "https://github.com/FrancisBrodie/SurfsApp/issues"
   },
   "homepage": "https://github.com/FrancisBrodie/SurfsApp#readme",
-  "devDependencies": {
-    "serve": "^13.0.2"
+  "type": "module",
+  "dependencies": {
+    "express": "^4.17.3"
   }
 }
