@@ -19,6 +19,7 @@
   "homepage": "https://github.com/FrancisBrodie/SurfsApp#readme",
   "type": "module",
   "dependencies": {
-    "express": "^4.17.3"
+    "express": "^4.17.3",
+    "pg": "^8.7.3"
   }
 }
