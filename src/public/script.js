@@ -42,3 +42,21 @@ function showCurrentStep() {
         step.classList.toggle('active', index === currentStep)
     })
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const selectDrop = document.getElementById('countries')
+
+    fetch('').then(res => {
+        return res.json();
+    }).then(data => {
+        let output = "";
+        data.forEach(country => {
+            output += `<option value="${country.name.common}">${country.name.common}</option>`;
+        })
+
+        selectDrop.innerHTML = output;
+
+    }).catch(error => {
+        console.log(error);
+    })
+})
