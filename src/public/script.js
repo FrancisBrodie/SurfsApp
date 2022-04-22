@@ -46,7 +46,7 @@ function showCurrentStep() {
 document.addEventListener('DOMContentLoaded', () => {
     const selectDrop = document.getElementById('countries')
 
-    fetch('').then(res => {
+    fetch('https://restcountries.com/v3.1/all').then(res => {
         return res.json();
     }).then(data => {
         let output = "";

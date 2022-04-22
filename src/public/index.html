@@ -34,15 +34,6 @@
         <label for="language">Pick your Language</label>
         <input type="text" name="language" id="language">
     </div>
-    <button type="button" class="button" data-previous>Previous</button>
-    <button type="button" class="button" data-next>Next</button>
-    </div>
-    <div class="card" data-step=>
-        <h3 class="step-title">Step 3 of 3</h3>
-        <div class="form-group">
-        <label for="continent">Select Continent</label>
-        <input type="text" name="continent" id="continent">
-    </div>
     <div class="form-group">
         <label for="country">Select Country</label>
         <select id="countries" name="countries"></select>
@@ -51,7 +42,64 @@
         <label for="city">Select City</label>
         <input type="text" name="city" id="city">
     </div>
-    <button type="button" class="button" data-previous="">Previous</button>
+    <button type="button" class="button" data-previous>Previous</button>
+    <button type="button" class="button" data-next>Next</button>
+    </div>
+    <div class="card" data-step=>
+        <h3 class="step-title">Step 3 of 3</h3>
+        <h3 class="step-title">Gender</h3> 
+        <div id="container">
+        <div class="form-group-select">
+        <label for="check">Female</label>
+        <input type="checkbox" name="check" id="check" class="toggle">
+        </div>
+        <div class="form-group-select">
+        <label for="check">Male</label>
+        <input type="checkbox" name="check" id="check" class="toggle">
+        </div>
+        <div class="form-group-select">
+        <label for="check">Other</label>
+        <input type="checkbox" name="check" id="check" class="toggle">
+        </div>
+        </div>
+        <h3 class="step-title">Wind</h3>
+        <div id="container">
+            <div class="form-group-select">
+            <label for="check">Kms</label>
+            <input type="checkbox" name="check" id="check" class="toggle">
+            </div>
+            <div class="form-group-selectM">
+            <label for="check">Mph</label>
+            <input type="checkbox" name="check" id="check" class="toggle">
+            </div>
+            <div class="form-group-select">
+            <label for="check">Knots</label>
+            <input type="checkbox" name="check" id="check" class="toggle">
+            </div>
+            </div>
+            <h3 class="step-title">Heights</h3>
+            <div id="container-heights">
+            <div class="form-group-select">
+            <label for="check">Meter</label>
+            <input type="checkbox" name="check" id="check" class="toggle">
+            </div>
+            <div class="form-group-select">
+            <label for="check">Feet</label>
+            <input type="checkbox" name="check" id="check" class="toggle">
+            </div>
+            </div>
+            <h3 class="step-title">Temperature</h3>
+            <div id="container-heights">
+            <div class="form-group-select">
+            <label for="check">Celsius</label>
+            <input type="checkbox" name="check" id="check" class="toggle">
+            </div>
+            <div class="form-group-select">
+            <label for="check">Farenheit</label>
+            <input type="checkbox" name="check" id="check" class="toggle">
+            </div>
+            </div>
+        <button type="button" class="button" data-previous="">Previous</button>
         <button type="submit" class="button">Submit</button>
     </div>
 </form>
