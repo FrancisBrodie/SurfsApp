@@ -17,26 +17,40 @@ app.get("/hats", (req, res) => {
         res.json(queryResponse.rows);
     });
 });
-app.post("/sign-up", (req, res) => {
-    if (!isEmail(req.body.email)) {
-        return res.status(400).send();
-    }
+app.post("/step1", (req, res) => {
+    res.redirect("/step2.html")
+    // if (!isEmail(req.body.email)) {
+    //     return res.status(400).send();
+    // }
 
-    const hashedPassword = hashPassword(req.body.password);
+    // const hashedPassword = hashPassword(req.body.password);
 
-    client
-        .query(
-            "INSERT into users (email, language, city, hashed_password) values ($1, $2,  $3, $4)",
-            [
-                req.body.email,
-                req.body.language,
-                req.body.city,
-                hashedPassword,
-            ]
-        )
-        .then(() => {
-            return res.redirect('/redirect.html');
-        });
+    // client
+    //     .query(
+    //         "INSERT into users (email, language, city, hashed_password) values ($1, $2,  $3, $4)",
+    //         [
+    //             req.body.email,
+    //             req.body.language,
+    //             req.body.city,
+    //             hashedPassword,
+    //         ]
+    //     )
+    //     .then(() => {
+    //         return res.redirect('/step2.html');
+    //     })
+    //     // .then(() => {
+    //     //     return res.redirect('/step3.html');
+    //     // })
+    //     .then(() => {
+    //         return res.redirect('/redirect.html');
+    //     });
+});
+app.post("/step2", (req, res) => {
+    res.redirect("/step3.html")
+});
+
+app.post("/step3", (req, res) => {
+    res.redirect("/redirect.html")
 });
 
 app.listen(3000);

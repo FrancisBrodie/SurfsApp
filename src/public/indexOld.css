@@ -1,0 +1,199 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    color: #926239;
+    line-height: 1.6;
+}
+
+.landing {
+    background-image: url('./img/Landing2.jpg');
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px
+}
+
+.landing h1 {
+    font-size: 50px;
+    line-height: 1.2;
+}
+
+.landing p {
+    font-size: 20px;
+}
+
+.landing .button {
+    font-size: 15px;
+    text-decoration: none;
+    color: #926239;
+    border: #926239;
+    padding: 8px 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+.landing .button:hover {
+    background: #926239;
+    color: #fff;
+}
+
+.button {
+    font-size: 15px;
+    text-decoration: none;
+    color: #926239;
+    border: #926239;
+    padding: 8px 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+.button:hover {
+    background: #926239;
+    color: #fff;
+}
+
+.overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.65);
+    color: #926239;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.card {
+    border: 1px solid #926239;
+    border-radius: .5rem;
+    padding: .5rem;
+    background: transparent;
+    max-width: 300px;
+    margin: 0 auto;
+    animation: fade 250ms ease-in-out forwards;
+
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: .5rem;
+    gap: .25em;
+}
+
+.form-group :last-child {
+    margin: 0;
+}
+
+.form-group>label {
+    font-weight: bold;
+    font-size: .8em;
+    color: #926239;
+}
+
+.form-group>input {
+    border: 1px solid #926239;
+    border-radius: .25em;
+    background: transparent;
+    font-size: 1rem;
+    padding: .25rem;
+    color: #926239;
+}
+
+.step-title {
+    margin: 0;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.card.active {
+    animation: slide 250ms 250ms ease-in-out both;
+}
+
+.multi-step-form {
+    overflow: hidden;
+    position: relative;
+    width: min-content;
+}
+
+.hide {
+    display: none;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(200%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fade {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(.75);
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(0);
+    }
+}
+
+
+input[type="checkbox"].toggle {
+    /* opacity: 0; */
+    position: relative;
+    cursor: pointer;
+}
+
+input[type="checkbox"].toggle:checked+label {
+    color: #fff;
+}
+
+#container {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    width: 300px;
+}
+
+#container div {
+    align-items: center;
+    margin: 5px;
+    width: 100%;
+}
+
+#container-heights {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+#container-heights div {
+    align-items: center;
+    width: 100%;
+}
