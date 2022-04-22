@@ -10,11 +10,11 @@
 </head>
 <body>
 <header class="landing">
-    <div class="overlay">  
+    <div class="overlay">
     <h1>Welcome to SurfsApp!</h1>
     <p>Let's sign up :D </p>
     <!-- <a href="./lists.html" class="button">GOOGLE</a> -->
-  
+
 <form data-multi-step method="post" action="/sign-up" class="multi-step-form">
     <div class="card" data-step=>
         <h3 class="step-title">Step 1 of 3</h3>
@@ -47,58 +47,92 @@
     </div>
     <div class="card" data-step=>
         <h3 class="step-title">Step 3 of 3</h3>
-        <h3 class="step-title">Gender</h3> 
+
         <div id="container">
-        <div class="form-group-select">
-        <label for="check">Female</label>
-        <input type="checkbox" name="check" id="check" class="toggle">
+          <h3 class="step-title">Gender</h3>
+          <div class="form-group-select">
+            <label for="gender-female">Female</label>
+            <input
+              type="radio"
+              name="gender"
+              id="gender-female"
+              value="female"
+              class="toggle"
+            />
+          </div>
+
+          <div class="form-group-select">
+            <label for="gender-male">Male</label>
+            <input
+              type="radio"
+              name="gender"
+              id="gender-male"
+              value="male"
+              class="toggle"
+            />
+          </div>
+
+          <div class="form-group-select">
+            <label for="gender-other">Other</label>
+            <input
+              type="radio"
+              name="gender"
+              id="gender-other"
+              value="other"
+              class="toggle"
+            />
+          </div>
         </div>
-        <div class="form-group-select">
-        <label for="check">Male</label>
-        <input type="checkbox" name="check" id="check" class="toggle">
-        </div>
-        <div class="form-group-select">
-        <label for="check">Other</label>
-        <input type="checkbox" name="check" id="check" class="toggle">
-        </div>
-        </div>
-        <h3 class="step-title">Wind</h3>
+
         <div id="container">
-            <div class="form-group-select">
-            <label for="check">Kms</label>
-            <input type="checkbox" name="check" id="check" class="toggle">
-            </div>
-            <div class="form-group-selectM">
-            <label for="check">Mph</label>
-            <input type="checkbox" name="check" id="check" class="toggle">
-            </div>
-            <div class="form-group-select">
-            <label for="check">Knots</label>
-            <input type="checkbox" name="check" id="check" class="toggle">
-            </div>
-            </div>
-            <h3 class="step-title">Heights</h3>
-            <div id="container-heights">
-            <div class="form-group-select">
-            <label for="check">Meter</label>
-            <input type="checkbox" name="check" id="check" class="toggle">
-            </div>
-            <div class="form-group-select">
-            <label for="check">Feet</label>
-            <input type="checkbox" name="check" id="check" class="toggle">
-            </div>
-            </div>
-            <h3 class="step-title">Temperature</h3>
-            <div id="container-heights">
-            <div class="form-group-select">
-            <label for="check">Celsius</label>
-            <input type="checkbox" name="check" id="check" class="toggle">
-            </div>
-            <div class="form-group-select">
-            <label for="check">Farenheit</label>
-            <input type="checkbox" name="check" id="check" class="toggle">
-            </div>
-            </div>
+          <h3 class="step-title">Wind</h3>
+          <div class="form-group-select">
+            <label for="kms">Kms</label>
+            <input type="radio" name="wind" id="kms" value="Kms" class="toggle" />
+          </div>
+          <div class="form-group-selectM">
+            <label for="mph">Mph</label>
+            <input type="radio" name="wind" id="mph" value="Mph" class="toggle" />
+          </div>
+          <div class="form-group-select">
+            <label for="knots">Knots</label>
+            <input type="radio" name="wind" id="knots" value="Knots" class="toggle" />
+          </div>
+        </div>
+
+        <div id="container-heights">
+          <h3 class="step-title">Heights</h3>
+
+          <div class="form-group-select">
+            <label for="meter">Meter</label>
+            <input
+              type="radio"
+              name="heights"
+              id="meter"
+              value="Meter"
+              class="toggle"
+            />
+          </div>
+
+          <div class="form-group-select">
+            <label for="feet">Feet</label>
+            <input type="radio" name="heights" id="feet" value="Feet" class="toggle" />
+          </div>
+        </div>
+
+        <div id="container-temperature">
+          <h3 class="step-title">Temperature</h3>
+
+          <div class="form-group-select">
+            <label for="celsius">Celsius</label>
+            <input type="radio" name="temperature" id="celsius" class="toggle" />
+          </div>
+          <div class="form-group-select">
+            <label for="farenheit">Farenheit</label>
+            <input type="radio" name="temperature" id="farenheit" class="toggle" />
+          </div>
+        </div>
+
         <button type="button" class="button" data-previous="">Previous</button>
         <button type="submit" class="button">Submit</button>
     </div>
