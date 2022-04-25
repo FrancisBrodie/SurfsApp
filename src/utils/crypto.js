@@ -2,10 +2,9 @@ import * as bcrypt from "bcrypt";
 
 export const hashPassword = (pw) => {
   const salt = bcrypt.genSaltSync();
-  const hashedPassword = bcrypt.hashSync(pw, salt);
-  return hashedPassword;
+  return bcrypt.hashSync(pw, salt);
 };
 
-export const passwordMatches = (pw, hashedPw) => {
+export const checkPassword = (pw, hashedPw) => {
   return bcrypt.compareSync(pw, hashedPw);
 };
