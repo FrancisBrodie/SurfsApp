@@ -1,143 +1,26 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>SurfsApp</title>
     <link rel="stylesheet" href="./index.css">
-    <script src=" script.js" defer></script>
 </head>
+
 <body>
-<header class="landing">
-    <div class="overlay">
-    <h1>Welcome to SurfsApp!</h1>
-    <p>Let's sign up :D </p>
-    <!-- <a href="./lists.html" class="button">GOOGLE</a> -->
 
-<form data-multi-step method="post" action="/sign-up" class="multi-step-form">
-    <div class="card" data-step=>
-        <h3 class="step-title">Step 1 of 3</h3>
-        <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" required name="email" id="email">
-    </div>
-    <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" required name="password" id="password">
-    </div>
-    <button type="button" class="button"data-next>Next</button>
-    </div>
-    <div class="card" data-step=>
-        <h3 class="step-title">Step 2 of 3</h3>
-        <div class="form-group">
-        <label for="language">Pick your Language</label>
-        <input type="text" name="language" id="language">
-    </div>
-    <div class="form-group">
-        <label for="country">Select Country</label>
-        <select id="countries" name="countries"></select>
-    </div>
-    <div class="form-group">
-        <label for="city">Select City</label>
-        <input type="text" name="city" id="city">
-    </div>
-    <button type="button" class="button" data-previous>Previous</button>
-    <button type="button" class="button" data-next>Next</button>
-    </div>
-    <div class="card" data-step=>
-        <h3 class="step-title">Step 3 of 3</h3>
+    <main class="landing">
+        <div class="overlay">
+            <h1>Welcome to SurfsApp!</h1>
+            <h2>Let's begin :D </h2>
 
-        <div id="container">
-          <h3 class="step-title">Gender</h3>
-          <div class="form-group-select">
-            <label for="gender-female">Female</label>
-            <input
-              type="radio"
-              name="gender"
-              id="gender-female"
-              value="female"
-              class="toggle"
-            />
-          </div>
-
-          <div class="form-group-select">
-            <label for="gender-male">Male</label>
-            <input
-              type="radio"
-              name="gender"
-              id="gender-male"
-              value="male"
-              class="toggle"
-            />
-          </div>
-
-          <div class="form-group-select">
-            <label for="gender-other">Other</label>
-            <input
-              type="radio"
-              name="gender"
-              id="gender-other"
-              value="other"
-              class="toggle"
-            />
-          </div>
+            <a href="/step1.html">
+                <button type="submit" class="button">Sign Up</button>
+            </a>
         </div>
-
-        <div id="container">
-          <h3 class="step-title">Wind</h3>
-          <div class="form-group-select">
-            <label for="kms">Kms</label>
-            <input type="radio" name="wind" id="kms" value="Kms" class="toggle" />
-          </div>
-          <div class="form-group-selectM">
-            <label for="mph">Mph</label>
-            <input type="radio" name="wind" id="mph" value="Mph" class="toggle" />
-          </div>
-          <div class="form-group-select">
-            <label for="knots">Knots</label>
-            <input type="radio" name="wind" id="knots" value="Knots" class="toggle" />
-          </div>
-        </div>
-
-        <div id="container-heights">
-          <h3 class="step-title">Heights</h3>
-
-          <div class="form-group-select">
-            <label for="meter">Meter</label>
-            <input
-              type="radio"
-              name="heights"
-              id="meter"
-              value="Meter"
-              class="toggle"
-            />
-          </div>
-
-          <div class="form-group-select">
-            <label for="feet">Feet</label>
-            <input type="radio" name="heights" id="feet" value="Feet" class="toggle" />
-          </div>
-        </div>
-
-        <div id="container-temperature">
-          <h3 class="step-title">Temperature</h3>
-
-          <div class="form-group-select">
-            <label for="celsius">Celsius</label>
-            <input type="radio" name="temperature" id="celsius" class="toggle" />
-          </div>
-          <div class="form-group-select">
-            <label for="farenheit">Farenheit</label>
-            <input type="radio" name="temperature" id="farenheit" class="toggle" />
-          </div>
-        </div>
-
-        <button type="button" class="button" data-previous="">Previous</button>
-        <button type="submit" class="button">Submit</button>
-    </div>
-</form>
-</div>
-</header>
+    </main>
 </body>
+
 </html>

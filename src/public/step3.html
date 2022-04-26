@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SurfsApp</title>
+    <link rel="stylesheet" href="./index.css">
+    <script src=" script.js" defer></script>
+</head>
+
+<body>
+    <main class="landing">
+        <div class="overlay">
+            <h1>Welcome to SurfsApp!</h1>
+            <p>Let's sign up :D </p>
+
+            <form method="post" action="/step3" class="multi-step-form card">
+
+                <h3 class="step-title">Step 3 of 3</h3>
+                <h3 class="step-title">Gender</h3>
+                <label class="toggle">
+                    Female
+                    <input type="radio" name="gender" value="female" />
+                </label>
+
+                <label class="toggle">
+                    Male
+                    <input type="radio" name="gender" value="male" />
+                </label>
+
+                <label class="toggle">
+                    Other
+                    <input type="radio" name="gender" value="other" />
+                </label>
+
+                <h3 class="step-title">Wind</h3>
+                <label class="toggle">
+                    Kms
+                    <input type="radio" name="wind" value="Kms" />
+                </label>
+
+                <label class="toggle">
+                    Mph
+                    <input type="radio" name="wind" value="Mph" />
+                </label>
+
+                <label class="toggle">
+                    Knots
+                    <input type="radio" name="wind" value="Knots" />
+                </label>
+
+                <h3 class="step-title">Heights</h3>
+                <label class="toggle">
+                    Meter
+                    <input type="radio" name="heights" value="Meter" />
+                </label>
+
+
+                <label class="toggle">
+                    Feet
+                    <input type="radio" name="heights" value="Feet" />
+                </label>
+
+                <h3 class="step-title">Temperature</h3>
+                <label class="toggle">
+                    Celsius
+                    <input type="radio" name="temperature" value="celsius" />
+                </label>
+
+                <label class="toggle">
+                    Farenheit
+                    <input type="radio" name="temperature" value="farenheit" />
+                </label>
+                <div class="select">
+                    <a href="./step2.html">
+                        <button type="button" class="button">Previous</button>
+                    </a>
+                    <button type="submit" class="button">Submit</button>
+                </div>
+            </form>
+        </div>
+    </main>
+</body>
+
+</html>

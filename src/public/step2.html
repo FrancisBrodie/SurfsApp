@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>SurfsApp</title>
+  <link rel="stylesheet" href="./index.css">
+  <script src=" script.js" defer></script>
+</head>
+
+<body>
+  <main class="landing">
+    <div class="overlay">
+
+      <h1>This is SurfsApp!</h1>
+      <p>You are on Step 2</p>
+
+      <form method="post" action="/step2" class="multi-step-form card">
+        <h3 class="step-title">2 of 3</h3>
+
+        <div class="select">
+          <label class="form-group">
+            Pick your Language
+            <input type="text" name="language">
+          </label>
+        </div>
+
+        <div class="select">
+          <label class="form-group">
+            Select Country
+            <select id="countries" name="countries"></select>
+          </label>
+        </div>
+
+        <div class="select">
+          <label class="form-group">
+            Select City
+            <input type="text" name="city">
+          </label>
+        </div>
+
+        <a href="./step1.html">
+          <button type="button" class="button">Previous</button>
+        </a>
+        <button type="submit" class="button">Submit</button>
+      </form>
+    </div>
+  </main>
+</body>
+
+</html>
