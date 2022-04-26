@@ -1,6 +1,6 @@
 import cookieSession from "cookie-session";
 import express from "express";
-import passport from "./passport";
+import passport from "./passport.js";
 
 export const configureMiddleware = (app) => {
   app.use(express.urlencoded({ extended: true }));
