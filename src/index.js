@@ -1,52 +1,54 @@
+import cookieSession from "cookie-session";
 import express from "express";
+import { idle_in_transaction_session_timeout } from "pg/lib/defaults";
 import { client } from "./db-config.js";
-import { hashPassword } from "./password-helpers.js";
+import { createUser } from "./repositories/users-repository.js";
+import * as passport from 'passport';
+import { Strategy } from 'passport-local';
 
+passport.use(new Strategy(
+    function (username, password, done) {
+        User.findOne({ username: username }, function (err, user) {
+            if (err) { return done(err); }
+            if (!user) { return done(null, false); }
+            if (!user.verifyPassword(password)) { return done(null, false); }
+            return done(null, user);
+        });
+    }
+));
 
-let isEmail = (validEmail) => {
-    return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(validEmail);
-};
 const app = express();
-
 
 app.use(express.static("src/public"));
 app.use(express.json());
-app.use(express.urlencoded());
-app.get("/hats", (req, res) => {
-    client.query("SELECT * from hats").then((queryResponse) => {
-        res.json(queryResponse.rows);
-    });
-});
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieSession({
+    keys: ['cookieKey'],
+    secret: 'cookieSecret',
+    maxAge: 1000 * 60 * 60
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+
 app.post("/step1", (req, res) => {
-    res.redirect("/step2.html")
-    // if (!isEmail(req.body.email)) {
-    //     return res.status(400).send();
-    // }
-
-    // const hashedPassword = hashPassword(req.body.password);
-
-    // client
-    //     .query(
-    //         "INSERT into users (email, language, city, hashed_password) values ($1, $2,  $3, $4)",
-    //         [
-    //             req.body.email,
-    //             req.body.language,
-    //             req.body.city,
-    //             hashedPassword,
-    //         ]
-    //     )
-    //     .then(() => {
-    //         return res.redirect('/step2.html');
-    //     })
-    //     // .then(() => {
-    //     //     return res.redirect('/step3.html');
-    //     // })
-    //     .then(() => {
-    //         return res.redirect('/redirect.html');
-    //     });
+    const user = {
+        email: req.body.email,
+        password: req.body.password
+    }
+    createUser(user, client).then(() => {
+        res.redirect("/step2.html")
+    })
 });
+
 app.post("/step2", (req, res) => {
-    res.redirect("/step3.html")
+    const user = {
+        language: req.body.language,
+        countries: req.body.countries,
+        city: req.body.city
+    }
+    createUser(user, client).then(() => {
+        res.redirect("/step3.html")
+    })
 });
 
 app.post("/step3", (req, res) => {
