@@ -26,13 +26,16 @@ const strategy = new Strategy(
   verifyUser
 );
 const serializeUser = (user, done) => {
-  console.log(user);
   done(null, user.id);
 };
 const deserializeUser = async (id, done) => {
   try {
     const user = await findUserById(id);
-    if (user) return done(null, user);
+    if (user) {
+      return done(null, user);
+    } else {
+      return done(null, null);
+    }
   } catch (e) {
     return done(e, null);
   }
