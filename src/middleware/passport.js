@@ -9,15 +9,13 @@ import { checkPassword } from "../utils/crypto.js";
 
 const verifyUser = async (email, password, done) => {
   try {
-    const foundUserResponse = await findUserByEmail(email);
-    const foundUser = foundUserResponse.rows[0];
+    const foundUser = await findUserByEmail(email);
 
-    if (foundUser && checkPassword(password, foundUser.hashed_password))
+    if (foundUser && checkPassword(password, foundUser.hashedPassword))
       return done(null, foundUser);
 
-    const createdUserResponse = await createUser({ email, password });
-    const createdUser = createdUserResponse.rows[0];
-    done(null, createdUser);
+    const userId = await createUser({ email, password });
+    done(null, { id: userId });
   } catch (e) {
     done(e, null);
   }
