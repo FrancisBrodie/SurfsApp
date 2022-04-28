@@ -1,4 +1,4 @@
-create table userPreferences (
+create table usersPreferences (
   id serial PRIMARY KEY,
   language TEXT NOT NULL,
   countries TEXT NOT NULL,

@@ -18,7 +18,6 @@ const verifyUser = async (email, password, done) => {
     } else {
       return done(null, null)
     }
-
   } catch (e) {
     done(e, null);
   }

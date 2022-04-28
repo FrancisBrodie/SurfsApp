@@ -28,7 +28,7 @@ app.post(
 app.post(
   "/preferences",
   (req, res) => {
-    res.redirect("/step3.html");
+    res.redirect("/metrics.html");
   }
 );
 
@@ -40,7 +40,7 @@ app.post("/preferences", (req, res) => {
   };
 });
 
-app.post("/step3", (req, res) => {
+app.post("/metrics", (req, res) => {
   res.redirect("/redirect.html");
 });
 
