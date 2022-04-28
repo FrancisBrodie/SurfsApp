@@ -8,10 +8,10 @@ configureMiddleware(app);
 app.post(
   "/sign-up",
   passport.authenticate("local", {
-    failureRedirect: "/user-already-exists.html",
+    failureRedirect: "/sign-up-error.html",
   }),
   (req, res) => {
-    res.redirect("/step1");
+    res.redirect("/preferences.html");
   }
 );
 
@@ -25,15 +25,15 @@ app.post(
   }
 );
 
-app.post("/step1", (req, res) => {
-  const user = {
-    email: req.body.email,
-    password: req.body.password,
-  };
-});
+app.post(
+  "/preferences",
+  (req, res) => {
+    res.redirect("/step3.html");
+  }
+);
 
-app.post("/step2", (req, res) => {
-  const user = {
+app.post("/preferences", (req, res) => {
+  const userPreferences = {
     language: req.body.language,
     countries: req.body.countries,
     city: req.body.city,

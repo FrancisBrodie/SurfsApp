@@ -24,6 +24,19 @@ body {
     padding: 0 20px
 }
 
+.errorLanding {
+    background-image: url('./img/errorPage.jpg');
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px
+}
+
 .landing h1 {
     font-size: 50px;
     line-height: 1.2;
