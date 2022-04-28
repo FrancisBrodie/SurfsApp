@@ -1,6 +1,7 @@
 import express from "express";
 import { configureMiddleware } from "./middleware/configure.js";
 import passport from "./middleware/passport.js";
+import { createUserPreferences } from "./db/usersPreferences-repository.js";
 
 const app = express();
 configureMiddleware(app);
@@ -25,19 +26,24 @@ app.post(
   }
 );
 
-app.post(
-  "/preferences",
-  (req, res) => {
-    res.redirect("/metrics.html");
-  }
-);
-
 app.post("/preferences", (req, res) => {
   const userPreferences = {
     language: req.body.language,
     countries: req.body.countries,
     city: req.body.city,
+    userId: req.body.userId
   };
+
+  const dbQueryResult = createUserPreferences(userPreferences);
+
+  dbQueryResult.then((actualResult) => {
+    if (actualResult) {
+      res.redirect("/metrics.html");
+    }
+  }).catch((err) => {
+    console.error(`Something went wrong ${err}`);
+  });
+  
 });
 
 app.post("/metrics", (req, res) => {
